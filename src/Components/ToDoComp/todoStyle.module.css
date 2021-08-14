@@ -1,0 +1,16 @@
+.todo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    margin: 10px 0px;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+.completed{
+    background-color: #0db70d;
+ }
+.uncompleted{
+    background-color: #fd0909;
+}

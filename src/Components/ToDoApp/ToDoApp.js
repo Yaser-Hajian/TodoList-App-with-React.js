@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import styles from "./todoStyle.module.css"
+import styles from "./todoAppStyle.module.css"
 import ToDoForm from "../ToDoForm/ToDoForm";
 import ToDoList from "../ToDoList/ToDoList";
 
@@ -10,16 +10,27 @@ const ToDoApp = () => {
         const newTodo = {
             id : Math.floor(Math.random() *1000),
             text : todo,
-            inCompleted : false,
+            isCompleted : false,
         }
         const currentTodos = [...todos];
         currentTodos.unshift(newTodo);
         setTodos(currentTodos);
     }
+    const completeHandler = (id) =>{
+        const copy_todos_list = [...todos];
+        const index = todos.findIndex(todo => todo.id === id);
+        const copy_todo = {...todos[index]};
+        copy_todo.isCompleted = !copy_todo.isCompleted;
+        copy_todos_list[index] = copy_todo;
+        setTodos(copy_todos_list);
+    }
+    const editHandler = (id)=>{
+
+    }
     return (
         <div className={styles.container}>
             <ToDoForm addTodoHandler={addTodoHandler}/>
-            <ToDoList/>
+            <ToDoList todos={todos} completeHandler={completeHandler}/>
         </div>
     );
 };
