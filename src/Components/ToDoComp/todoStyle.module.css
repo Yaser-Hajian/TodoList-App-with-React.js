@@ -8,9 +8,13 @@
     border-radius: 5px;
     padding: 10px 15px;
 }
-.completed{
+.completedBtn{
     background-color: #0db70d;
  }
-.uncompleted{
+.uncompletedBtn{
     background-color: #fd0909;
+}
+.completeText{
+    text-decoration: line-through;
+    color: #7e7d7d;
 }

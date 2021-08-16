@@ -8,15 +8,15 @@ const ToDoApp = () => {
 
     const addTodoHandler = (todo) => {
         const newTodo = {
-            id : Math.floor(Math.random() *1000),
-            text : todo,
-            isCompleted : false,
+            id: Math.floor(Math.random() * 1000),
+            text: todo,
+            isCompleted: false,
         }
         const currentTodos = [...todos];
         currentTodos.unshift(newTodo);
         setTodos(currentTodos);
     }
-    const completeHandler = (id) =>{
+    const completeHandler = (id) => {
         const copy_todos_list = [...todos];
         const index = todos.findIndex(todo => todo.id === id);
         const copy_todo = {...todos[index]};
@@ -24,13 +24,21 @@ const ToDoApp = () => {
         copy_todos_list[index] = copy_todo;
         setTodos(copy_todos_list);
     }
-    const editHandler = (id)=>{
+    const editHandler = (id) => {
 
+    }
+    const deleteHandler = (id) => {
+        const filteredTodos = todos.filter((todo) => todo.id !== id);
+        setTodos(filteredTodos);
     }
     return (
         <div className={styles.container}>
             <ToDoForm addTodoHandler={addTodoHandler}/>
-            <ToDoList todos={todos} completeHandler={completeHandler}/>
+            <ToDoList
+                todos={todos}
+                completeHandler={completeHandler}
+                deleteHandler={deleteHandler}
+            />
         </div>
     );
 };
