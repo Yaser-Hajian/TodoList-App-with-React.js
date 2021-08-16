@@ -2,11 +2,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 300px;
+    width: 400px;
     margin: 10px 0px;
     border: 1px solid #aaaaaa;
     border-radius: 5px;
     padding: 10px 15px;
+    /*overflow: auto;*/
+}
+.todoText{
+    width: 60%;
+    overflow: auto;
 }
 .completedBtn{
     background-color: #0db70d;
@@ -17,4 +22,6 @@
 .completeText{
     text-decoration: line-through;
     color: #7e7d7d;
+    width: 55%;
+    overflow: auto;
 }
