@@ -2,26 +2,68 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 400px;
-    margin: 10px 0px;
+    width: 95%;
+    margin: 10px auto;
     border: 1px solid #aaaaaa;
     border-radius: 5px;
     padding: 10px 15px;
     /*overflow: auto;*/
 }
 .todoText{
-    width: 60%;
+    width: 55%;
     overflow: auto;
+    font-size: 18px;
+    font-weight: bold;
 }
 .completedBtn{
-    background-color: #0db70d;
+    background-color: white;
+    color: #0db70d;
+    border: 1px solid #0db70d;
+    border-radius: 5px;
+    outline: none;
+    padding: 3px 5px;
+    cursor: pointer;
  }
 .uncompletedBtn{
-    background-color: #fd0909;
+    background-color: white;
+    color: #fd0909;
+    border: 1px solid #fd0909;
+    border-radius: 5px;
+    outline: none;
+    padding: 3px 5px;
+    cursor: pointer;
 }
 .completeText{
     text-decoration: line-through;
     color: #7e7d7d;
     width: 55%;
     overflow: auto;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+.editBtn{
+    background-color: white;
+    color: #6d28d9;
+    border: 1px solid #6d28d9;
+    border-radius: 5px;
+    outline: none;
+    padding: 3px 5px;
+    cursor: pointer;
+}
+.deleteBtn{
+    background-color: white;
+    color: #fd0909;
+    border: 1px solid #fd0909;
+    border-radius: 5px;
+    outline: none;
+    padding: 3px 5px;
+    cursor: pointer;
+}
+.todoOptions{
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 2px;
 }

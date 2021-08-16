@@ -14,7 +14,7 @@ const ToDoList = ({todos, completeHandler ,deleteHandler ,editHandler}) => {
             return <p className={styles.empty}>Add some tasks to ToDoList</p>
         }
         return (
-            <div>
+            <div className={styles.todoContainer}>
                 {
                     todos.map((todo) => {
                         return (
@@ -32,11 +32,11 @@ const ToDoList = ({todos, completeHandler ,deleteHandler ,editHandler}) => {
     }
 
     return(
-        <div>
+        <>
             {
                 edit.text ? <ToDoForm submitHandler={editTodo} editedTodo={edit}/> : renderTodos()
             }
-        </div>
+        </>
     );
 };
 

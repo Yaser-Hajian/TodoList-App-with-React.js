@@ -1,21 +1,22 @@
 import React, {useEffect, useRef, useState} from 'react';
 import styles from "./todoFormStyle.module.css"
-const ToDoForm = ({submitHandler , editedTodo}) => {
+
+const ToDoForm = ({submitHandler, editedTodo}) => {
     const [inputValue, setInputValue] = useState("");
     const inputRef = useRef(null);
-    useEffect(()=>{
+    useEffect(() => {
         inputRef.current.focus();
-        if (editedTodo){
+        if (editedTodo) {
             setInputValue(editedTodo.text);
         }
-    },[])
+    }, [])
     const changeHandler = (event) => {
         setInputValue(event.target.value);
 
     }
     const onSubmit = (event) => {
         event.preventDefault();
-        if (!inputValue){
+        if (!inputValue) {
             alert("input todo description...");
             return
         }
@@ -25,37 +26,19 @@ const ToDoForm = ({submitHandler , editedTodo}) => {
 
     }
     return (
-        <>
-        {
-            editedTodo ?
-                <div>
-                    <form onSubmit={onSubmit}>
-                        <input
-                            type="text"
-                            value={inputValue}
-                            onChange={changeHandler}
-                            placeholder={editedTodo.text}
-                            ref={inputRef}
-                        />
-                        <button type={"submit"}>Update</button>
-                    </form>
-                </div>
-                :
-                <div>
-                    <form onSubmit={onSubmit}>
-                        <input
-                            type="text"
-                            value={inputValue}
-                            onChange={changeHandler}
-                            placeholder={"New Todo text"}
-                            ref={inputRef}
+        <div>
+            <form onSubmit={onSubmit}>
+                <input
+                    type="text"
+                    value={inputValue}
+                    onChange={changeHandler}
+                    placeholder={editedTodo ? "Edited todo text" : "New Todo text"}
+                    ref={inputRef}
 
-                        />
-                        <button type={"submit"}>Add</button>
-                    </form>
-                </div>
-        }
-        </>
+                />
+                <button type={"submit"}>{editedTodo ? "Update" : "Add"}</button>
+            </form>
+        </div>
     );
 };
 

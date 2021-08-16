@@ -5,7 +5,7 @@ const Todo = ({todo, completeHandler , deleteHandler , onEdit}) => {
     return (
         <div className={styles.todo}>
             <div  className={todo.isCompleted ? styles.completeText : styles.todoText}>{todo.text}</div>
-            <div>
+            <div className={styles.todoOptions}>
                 {
                     todo.isCompleted ?
                         <button onClick={completeHandler} className={styles.uncompletedBtn}>UnComplete</button>
@@ -13,8 +13,8 @@ const Todo = ({todo, completeHandler , deleteHandler , onEdit}) => {
                         <button onClick={completeHandler} className={styles.completedBtn}>Complete</button>
 
                 }
-                <button onClick={onEdit}>Edit</button>
-                <button onClick={deleteHandler}>Delete</button>
+                <button onClick={onEdit} className={styles.editBtn}>Edit</button>
+                <button onClick={deleteHandler} className={styles.deleteBtn}>Delete</button>
             </div>
         </div>
     );
