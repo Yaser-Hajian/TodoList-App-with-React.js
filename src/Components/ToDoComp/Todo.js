@@ -5,6 +5,12 @@ const Todo = ({todo, completeHandler , deleteHandler , onEdit}) => {
     return (
         <div className={styles.todo}>
             <div  className={todo.isCompleted ? styles.completeText : styles.todoText}>{todo.text}</div>
+            {
+                todo.date === ""?
+                    <div className={styles.date}>Date: no-date</div>
+                    :
+                    <div className={styles.date}>Date: {todo.date}</div>
+            }
             <div className={styles.todoOptions}>
                 {
                     todo.isCompleted ?

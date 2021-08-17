@@ -5,8 +5,8 @@ import ToDoForm from "../ToDoForm/ToDoForm";
 const ToDoList = ({todos, completeHandler ,deleteHandler ,editHandler}) => {
     const [edit , setEdit] = useState({});
 
-    const editTodo =(newText)=>{
-        editHandler(edit.id , newText);
+    const editTodo =(newText , newDate)=>{
+        editHandler(edit.id , newText , newDate);
         setEdit({})
     }
     const renderTodos =()=>{

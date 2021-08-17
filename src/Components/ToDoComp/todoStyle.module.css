@@ -10,7 +10,7 @@
     /*overflow: auto;*/
 }
 .todoText{
-    width: 55%;
+    width: 32%;
     overflow: auto;
     font-size: 18px;
     font-weight: bold;
@@ -36,7 +36,7 @@
 .completeText{
     text-decoration: line-through;
     color: #7e7d7d;
-    width: 55%;
+    width: 32%;
     overflow: auto;
     font-size: 18px;
     font-weight: bold;
@@ -61,9 +61,13 @@
     cursor: pointer;
 }
 .todoOptions{
-    width: 40%;
+    width: 30%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     margin-right: 2px;
+}
+.date{
+    width: 30%;
+    margin-left: 10px;
 }

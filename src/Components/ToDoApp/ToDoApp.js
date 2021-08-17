@@ -11,11 +11,12 @@ const ToDoApp = () => {
     useEffect(()=>{
         filterHandler(filterMethod);
     },[todos , filterMethod])
-    const addTodoHandler = (todoText) => {
+    const addTodoHandler = (todoText , todoDate) => {
         const newTodo = {
             id: Math.floor(Math.random() * 1000),
             text: todoText,
             isCompleted: false,
+            date : todoDate,
         }
         const currentTodos = [...todos];
         currentTodos.unshift(newTodo);
@@ -30,11 +31,12 @@ const ToDoApp = () => {
         copy_todos_list[index] = copy_todo;
         setTodos(copy_todos_list);
     }
-    const editHandler = (id , newText) => {
+    const editHandler = (id , newText , newDate) => {
         const copy_todos_list = [...todos];
         const index = todos.findIndex(todo => todo.id === id);
         const copy_todo = {...todos[index]};
         copy_todo.text = newText;
+        copy_todo.date = newDate;
         copy_todos_list[index] = copy_todo;
         setTodos(copy_todos_list);
 
