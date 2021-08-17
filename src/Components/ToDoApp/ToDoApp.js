@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import styles from "./todoAppStyle.module.css"
 import ToDoForm from "../ToDoForm/ToDoForm";
 import ToDoList from "../ToDoList/ToDoList";
@@ -8,15 +8,15 @@ const ToDoApp = () => {
     const [todos, setTodos] = useState([]);
     const [filteredTodos, setFilteredTodos] = useState([]);
     const [filterMethod, setFilterMethod] = useState("");
-    useEffect(()=>{
+    useEffect(() => {
         filterHandler(filterMethod);
-    },[todos , filterMethod])
-    const addTodoHandler = (todoText , todoDate) => {
+    }, [todos, filterMethod])
+    const addTodoHandler = (todoText, todoDate) => {
         const newTodo = {
             id: Math.floor(Math.random() * 1000),
             text: todoText,
             isCompleted: false,
-            date : todoDate,
+            date: todoDate,
         }
         const currentTodos = [...todos];
         currentTodos.unshift(newTodo);
@@ -31,7 +31,7 @@ const ToDoApp = () => {
         copy_todos_list[index] = copy_todo;
         setTodos(copy_todos_list);
     }
-    const editHandler = (id , newText , newDate) => {
+    const editHandler = (id, newText, newDate) => {
         const copy_todos_list = [...todos];
         const index = todos.findIndex(todo => todo.id === id);
         const copy_todo = {...todos[index]};
@@ -46,12 +46,12 @@ const ToDoApp = () => {
         setTodos(filteredTodos);
     }
 
-    const filterHandler = (selectedOption)=>{
-        if (selectedOption.value === "Completed"){
+    const filterHandler = (selectedOption) => {
+        if (selectedOption.value === "Completed") {
             setFilteredTodos(todos.filter(todo => todo.isCompleted));
-        }else if (selectedOption.value === "Uncompleted"){
+        } else if (selectedOption.value === "Uncompleted") {
             setFilteredTodos(todos.filter(todo => !todo.isCompleted));
-        }else {
+        } else {
             setFilteredTodos(todos);
         }
     }

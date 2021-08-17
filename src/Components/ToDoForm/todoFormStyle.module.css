@@ -18,6 +18,7 @@ input:focus{
     background-color: #198dd9;
     outline: none;
     border: none;
+    margin-top: 5px;
 }
 .form{
     display: flex;

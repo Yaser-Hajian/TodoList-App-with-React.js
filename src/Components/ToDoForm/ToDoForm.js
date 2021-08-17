@@ -1,10 +1,11 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useContext, useEffect, useRef, useState} from 'react';
 import styles from "./todoFormStyle.module.css"
 
 const ToDoForm = ({submitHandler, editedTodo}) => {
     const [inputValue, setInputValue] = useState("");
     const [inputDate, setInputDate] = useState("");
     const inputRef = useRef(null);
+
     useEffect(() => {
         inputRef.current.focus();
         if (editedTodo) {
@@ -36,9 +37,8 @@ const ToDoForm = ({submitHandler, editedTodo}) => {
                     type="text"
                     value={inputValue}
                     onChange={changeHandler}
-                    placeholder={editedTodo ? "Edited todo text" : "New Todo text"}
+                    placeholder={editedTodo ? "Edited todo text" : "New Todo text (Required)"}
                     ref={inputRef}
-
                 />
                 <input
                     type="date"

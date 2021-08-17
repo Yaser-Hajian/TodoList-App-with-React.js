@@ -9,3 +9,8 @@
     border-radius: 5px;
     padding: 10px;
 }
+@media screen and (max-width: 416px){
+    .container {
+        width: 100vw;
+    }
+}

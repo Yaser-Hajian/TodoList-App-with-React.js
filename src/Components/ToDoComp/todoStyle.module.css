@@ -82,3 +82,30 @@
     width: 30%;
     margin-left: 10px;
 }
+@media screen and (max-width: 416px){
+    .todo {
+        flex-direction: column;
+    }
+    .lateTodo{
+        flex-direction: column;
+    }
+    .todoText{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    .completeText{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    .date{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    .todoOptions{
+        width: 90%;
+        justify-content: space-evenly;
+    }
+}
