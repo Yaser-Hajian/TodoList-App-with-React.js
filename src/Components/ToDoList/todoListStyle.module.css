@@ -4,3 +4,8 @@
 .todoContainer{
     width: 70%;
 }
+@media screen and (max-width: 416px){
+    .todoContainer{
+        width: 90%;
+    }
+}

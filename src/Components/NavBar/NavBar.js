@@ -20,9 +20,9 @@ const NavBar = (props) => {
             <div>
                 {
                     (props.uncompleteTodo > 1 ?
-                       <h2> {props.uncompleteTodo} todos are UnCompleted!</h2>
+                       <h2 className={styles.title}> {props.uncompleteTodo} todos are UnCompleted!</h2>
                           :
-                       <h2> {props.uncompleteTodo} todo is UnCompleted!</h2>
+                       <h2 className={styles.title}> {props.uncompleteTodo} todo is UnCompleted!</h2>
                     )
                 }
             </div>
