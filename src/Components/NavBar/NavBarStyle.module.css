@@ -1,0 +1,15 @@
+
+h2{
+    margin-bottom: 5px;
+}
+.selectContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.select{
+    width: 180px;
+    margin-left: 5px;
+}

@@ -5,7 +5,7 @@ import ToDoApp from "./Components/ToDoApp/ToDoApp";
 function App() {
   return (
     <div className="App">
-        <h2 className={"title"}>this is todolist app</h2>
+        <h1 className={"title"}>TodoListApp with React - Yaser</h1>
         <ToDoApp />
     </div>
   );
