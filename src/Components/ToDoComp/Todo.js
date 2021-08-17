@@ -1,9 +1,19 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from "./todoStyle.module.css"
 
 const Todo = ({todo, completeHandler , deleteHandler , onEdit}) => {
+    const [isLate , setIsLate] = useState(false);
+    useEffect(()=>{
+        const now = new Date();
+        const todo_date = new Date(todo.date);
+         if (todo_date < now){
+            setIsLate(true);
+        }else {
+            setIsLate(false);
+        }
+    },[todo])
     return (
-        <div className={styles.todo}>
+        <div className={isLate? (todo.isCompleted? (styles.todo): (styles.lateTodo)) : styles.todo}>
             <div  className={todo.isCompleted ? styles.completeText : styles.todoText}>{todo.text}</div>
             {
                 todo.date === ""?

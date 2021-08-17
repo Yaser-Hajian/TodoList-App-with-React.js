@@ -9,6 +9,17 @@
     padding: 10px 15px;
     /*overflow: auto;*/
 }
+.lateTodo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    margin: 10px auto;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    padding: 10px 15px;
+    background-color: #EF4444;
+}
 .todoText{
     width: 32%;
     overflow: auto;
