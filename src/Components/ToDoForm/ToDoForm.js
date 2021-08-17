@@ -36,7 +36,7 @@ const ToDoForm = ({submitHandler, editedTodo}) => {
                     ref={inputRef}
 
                 />
-                <button type={"submit"}>{editedTodo ? "Update" : "Add"}</button>
+                <button type={"submit"} className={styles.btn} >{editedTodo ? "Update" : "Add"}</button>
             </form>
         </div>
     );

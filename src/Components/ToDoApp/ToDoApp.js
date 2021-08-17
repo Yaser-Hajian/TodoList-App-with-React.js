@@ -45,10 +45,7 @@ const ToDoApp = () => {
     }
 
     const filterHandler = (selectedOption)=>{
-        if (selectedOption === null){
-            setFilteredTodos(todos);
-        }
-        else if (selectedOption.value === "Completed"){
+        if (selectedOption.value === "Completed"){
             setFilteredTodos(todos.filter(todo => todo.isCompleted));
         }else if (selectedOption.value === "Uncompleted"){
             setFilteredTodos(todos.filter(todo => !todo.isCompleted));
